@@ -10,15 +10,15 @@ export class AppComponent {
 
   constructor(private service: AppService) {}
 
-  test() {
-    const c = this.sample();
+  async test() {
+    const c = await this.sample();
     console.log('c', c);
     // const b = Promise.all(c);
     // console.log('b', b);
   }
 
 
-  sample(): Promise<number[]> {
+  async sample(): Promise<number[]> {
     const c: Array<Promise<number[]>> = [];
     return new Promise(res => {
       this.service.testA().then(_ => {
