@@ -28,6 +28,7 @@ export class AppComponent {
             __.forEach(y => {
               console.log('y', y);
               c.push(new Promise(() => y));
+              res();
             });
           });
         });
